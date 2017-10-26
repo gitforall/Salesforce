@@ -1,0 +1,39 @@
+<apex:page controller="wrapperclassexample1"  >
+
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"/>
+    <script>
+        function oneCheck(){
+             $("input:checkbox").change(function() {
+                    var ischecked= $(this).is(':checked');
+                    if(!ischecked)
+                      alert('uncheckd ' + $(this).val());
+                }); 
+      
+        }
+    </script>
+
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Display Details" action="{!pressSelected}" reRender="block2"/>
+                <apex:commandButton value="Refresh" onclick="oneCheck();"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2" >
+                <apex:pageBlockTable value="{!wrapaccountlist}" var="acc" rows="10">
+                    <apex:column >
+                        <apex:facet name="header">
+                        <apex:inputCheckbox />
+                        </apex:facet>
+                        <apex:inputCheckbox value="{!acc.isSelected}" id="inputcheckbox" />
+                    </apex:column>
+                    <apex:column value="{!acc.accn.Name}"/>
+                    <apex:column value="{!acc.accn.Industry}"/>
+                </apex:pageBlockTable>
+                <apex:pageBlockTable value="{!selectedAccounts}" var="acc" id="block2">
+                    <apex:column value="{!acc.Name}"/>
+                    <apex:column value="{!acc.Industry}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

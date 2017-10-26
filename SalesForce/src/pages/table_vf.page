@@ -1,0 +1,15 @@
+<apex:page standardController="Account" recordSetVar="act">
+<apex:form >
+    <apex:pageBlock title="My Content">
+        <apex:pageBlockTable value="{!act}" var="a" id="table" styleClass="style">
+            <apex:column value="{!a.name}" width="200"/>
+            <apex:column value="{!a.Type}" width="200"/>
+            <apex:column value="{!a.Industry}" width="200"/>
+            <apex:inlineEditSupport />
+        </apex:pageBlockTable>
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Save" action="{!save}"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,66 @@
+<apex:page docType="html-5.0" showHeader="false" sidebar="false">
+
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Your description here"/>
+    <meta name="author" content="Your Name"/>
+    <title>Learning Boostrap</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+
+<!-- Bootstrap CSS -->
+    <apex:stylesheet value="{!URLFOR($Resource.bootstrap, '/css/bootstrap.min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.bootstrap, '/css/basic-template.css')}" />
+   
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">Registration</div>
+            <div class="panel-body">
+                <form id="registration-form"  class="form-horizontal" >
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="email">Email Address</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Your email address" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="password">Password</label>
+                        <div class="col-md-4">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="confirmpassword">Confirm Password</label>
+                        <div class="col-md-4">
+                            <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm password" />   
+                        </div>
+                    </div>                  
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="membership">Membership</label>
+                        <div class="col-md-4">
+                            <select class="form-control" id="membership" name="membership">
+                                <option value="0">Choose One</option>
+                                <option value="1">Basic (Free)</option>
+                                <option value="2">Premium (Paid)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-2">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="confirmation" class="alert alert-success hidden">
+                    <span class="glyphicon glyphicon-star"></span> Thank you for registering
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+</apex:page>

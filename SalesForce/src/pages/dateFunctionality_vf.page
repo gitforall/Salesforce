@@ -1,0 +1,20 @@
+<apex:page controller="DateFunctionality">
+   <apex:form >
+    <apex:pageBlock title="Date Functionality Examples">
+    <apex:commandButton value="All Data" action="{!getData}"/>
+    <apex:commandButton value="closed In Last 5 Years" action="{!closedInLastYears}"/>
+    <apex:commandButton value="Current Year Closed" action="{!ThisYear}"/>
+    <apex:commandButton value="Last Year Closed" action="{!LastYear}"/>
+    <apex:commandButton value="This Month" action="{!ThisMonth}"/>
+    <apex:commandButton value="This Week" action="{!ThisWeek}"/>
+    <apex:commandButton value="LAST N Months" action="{!LastNMonth}"/>
+        <apex:pageBlockTable value="{!opp}" var="o">
+            <apex:column value="{!o.Name}"/>
+            <apex:column value="{!o.StageName}"/>
+            <apex:column value="{!o.Amount}"/>
+            <apex:column value="{!o.CloseDate}"/>
+            <apex:column value="{!o.CreatedDate}"/>
+        </apex:pageBlockTable>  
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

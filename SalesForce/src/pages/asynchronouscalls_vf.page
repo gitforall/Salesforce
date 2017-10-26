@@ -1,0 +1,9 @@
+<apex:page controller="asyncronus" >
+     <apex:form >
+         <apex:pageBlock title="Asynchronus Calls" >
+             <apex:commandButton value="Future Method" action="{!future}"/>
+             <apex:commandButton value="Queueable Apex" action="{!queueable}"/>
+             <apex:commandButton value="Batch Apex" action="{!batch}"/>
+         </apex:pageblock>
+     </apex:form>
+</apex:page>

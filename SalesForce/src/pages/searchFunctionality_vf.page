@@ -1,0 +1,31 @@
+<apex:page controller="SearchController_c" docType="html-5.0">
+<style>
+.thick {
+    font-weight: bold;
+    color: blue;
+}
+</style>
+    <apex:form >
+        <apex:pageBlock title="Search Functionality">
+            <apex:outputLabel value="Show Opps greater than Amount : " styleClass="thick" />
+            <apex:inputText value="{!amount}" />
+            <apex:outputLabel value="Select Close Date : " styleClass="thick" />
+            <apex:input type="date" value="{!datetime_c}" />
+            <apex:commandButton value="Search.." action="{!getSearchData}" />
+                <apex:pageBlockButtons location="top">
+                    <apex:commandButton value="All Data" action="{!getData}"/>
+                    <apex:commandButton value="Cancel" action="{!refreshh}"/>
+                </apex:pageBlockButtons>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Search Data" rendered="{!flag1}" >
+            <apex:pageBlockTable value="{!opp}" var="o">
+                <apex:column value="{!o.Name}"/>
+                <apex:column value="{!o.StageName}"/>
+                <apex:column value="{!o.Amount}"/>
+                <apex:column value="{!o.CloseDate}"/>
+                <apex:column value="{!o.CreatedDate}"/>
+            </apex:pageBlockTable>
+        </apex:pageBlock>       
+    </apex:form>
+</apex:page>

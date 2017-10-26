@@ -1,0 +1,37 @@
+<apex:page standardController="Account" recordSetVar="acc" id="pg">
+
+
+<apex:form id="fm">   
+    <apex:pageBlock title="Account Details">
+        <apex:pageBlockTable value="{!acc}" var="a" first="16">
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Type}"/>
+            <apex:column >
+                 <apex:facet name="header"> Phone </apex:facet>        
+                 <apex:repeat value="{!a.contacts}" var="rp">
+                    {!rp.phone}
+                    {!rp.FirstName} 
+                 </apex:repeat>
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+   
+    <apex:pageBlock >
+        <apex:dataList value="{!acc}" var="ss" rows="2">
+            <apex:commandLink value="{!ss.Name}" action="/{!ss.id}"/>
+        </apex:dataList>
+    </apex:pageBlock>
+    <apex:pageBlock id="pb" >
+            <apex:selectList size="1" onclick="display()" >
+                <apex:selectOptions value="{!listviewoptions}" id="li" />
+                 <script>
+                function display(){
+                    
+                    var name = document.getElementId('{!$Component.li}').value;
+                     alert(name);
+                }
+            </script>
+            </apex:selectList>          
+    </apex:pageBlock>
+</apex:form>     
+</apex:page>

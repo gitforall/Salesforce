@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Asset</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Assets</value>
+    </caseValues>
+    <fields>
+        <label><!-- AssetPrice --></label>
+        <name>AssetPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- AssetSerialNo --></label>
+        <name>AssetSerialNo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Chekbox --></label>
+        <name>Chekbox__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Master --></label>
+        <name>SubItem__c</name>
+        <relationshipLabel><!-- Assets Master --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

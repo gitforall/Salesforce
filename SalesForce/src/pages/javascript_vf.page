@@ -1,0 +1,25 @@
+<apex:page id="page" standardController="Account">
+    
+    <script>
+    function show()
+    {
+        var name=document.getElementById('page:f1:p1:ip1').value;
+        if(name== "" || name==null)
+        {
+            alert('Enter name');
+            return;
+        }
+    }
+    </script>
+    
+    <apex:form id="f1">
+        <apex:pageblock id="p1">
+            <apex:outputlabel value="Enter u r name" id="op1" />
+            <apex:inputText id="ip1" value="{!Account.Name}" required="true"/>
+            <apex:inputText id="ip2" value="{!Account.Name}" />
+            <apex:commandButton value="submit" onclick="return show();"  action="{!save}"  />
+            <apex:outputlabel id="op2" />
+        </apex:pageblock>
+    </apex:form>
+    
+</apex:page>

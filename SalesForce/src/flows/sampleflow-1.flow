@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Account</name>
+        <label>Account</label>
+        <locationX>171</locationX>
+        <locationY>186</locationY>
+        <actionName>NewAccount</actionName>
+        <actionType>quickAction</actionType>
+        <inputParameters>
+            <name>Name</name>
+        </inputParameters>
+    </actionCalls>
+    <interviewLabel>sampleflow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>sampleflow</label>
+    <processType>Flow</processType>
+    <screens>
+        <name>Login_Page</name>
+        <label>Login Page</label>
+        <locationX>114</locationX>
+        <locationY>31</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Account</targetReference>
+        </connector>
+        <fields>
+            <name>Username</name>
+            <dataType>String</dataType>
+            <fieldText>Username</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>The value you entered doesn&apos;t meet the validation criteria for this input field.</errorMessage>
+                <formulaExpression>{!$User.Username}</formulaExpression>
+            </validationRule>
+        </fields>
+        <fields>
+            <name>Password</name>
+            <dataType>String</dataType>
+            <fieldText>Password</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+    </screens>
+</Flow>

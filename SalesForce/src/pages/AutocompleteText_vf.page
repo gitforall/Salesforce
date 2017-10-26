@@ -1,0 +1,16 @@
+<apex:page >
+    <apex:stylesheet value="{!URLFOR($Resource.Autocomplete,'/jquery-ui.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.Autocomplete,'/jquery-1.12.4.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.Autocomplete,'/jquery-ui.js')}"/>
+    <apex:form >
+        <apex:pageblock >
+            <apex:inputText id="accountsearch" />
+        </apex:pageblock>
+    </apex:form>
+    
+    <script>
+    
+    </script>
+    
+    
+</apex:page>

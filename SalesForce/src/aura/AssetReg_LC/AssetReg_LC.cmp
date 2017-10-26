@@ -1,0 +1,13 @@
+<aura:component >
+    <ltng:require styles="" />
+	<h1>Hello Lighting Component</h1>
+    <aura:attribute name="val1" type="integer" default="10"/>
+    <aura:attribute name="val2" type="integer" default="30"/>
+     <aura:attribute name="sum" type="integer" />
+    {!v.val1} + {!v.val2} = {!v.sum}
+   
+    <br/>
+     
+    <lightning:button label="Submit" onclick="{! c.add }" />
+    
+</aura:component>

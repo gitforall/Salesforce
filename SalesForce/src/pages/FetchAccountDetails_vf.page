@@ -1,0 +1,17 @@
+<apex:page controller="FetchAccountDeatils">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:inputText value="{!keyword}"/>
+            <apex:commandButton value="Get Details" action="{!showresult}" />
+        </apex:pageBlock>
+       <apex:pageBlock >  
+            <apex:pageBlockTable value="{!acc}" var="a">
+                <apex:column value="{!a.Name}"/>
+                <apex:column value="{!a.Type}"/>
+                <apex:column value="{!a.industry}"/>
+                <apex:column value="{!a.Phone}"/>
+                <apex:column value="{!a.Fax}"/>
+            </apex:pageblockTable>      
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

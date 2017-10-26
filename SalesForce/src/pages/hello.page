@@ -1,0 +1,18 @@
+<apex:page standardController="Asset__c" docType="html-5.0">
+ <apex:form >
+     <apex:pageBlock title="Asset Details">
+         <apex:pageBlockSection title="Account Info">
+             <apex:inputField id="name" value="{!Asset__c.Name}"/>
+             <apex:inputField id="AssetPrice" value="{!Asset__c.AssetPrice__c}"/>     
+             <apex:inputField value="{!Asset__c.Email__c}" type="email" html-placeholder="you@example.com" html-pattern="^[a-zA-Z0-9._-]+@example.com$"/>
+             
+         </apex:pageBlockSection>
+        <apex:pageBlockButtons >
+                <apex:commandButton id="save" action="{!save}" value="save"/>
+                <apex:commandButton id="cancel" action="{!cancel}" value="cancel"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+     </apex:form>
+ 
+ 
+</apex:page>

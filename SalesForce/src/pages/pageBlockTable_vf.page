@@ -1,0 +1,56 @@
+<apex:page standardController="Account" recordSetVar="acc">
+<style>
+    .caption{
+        background-color: lightblue;
+        font-size: 20px;
+    }
+    .header{
+        background-color: pink;
+    }
+    .footer{
+        background-color: yellow;
+    }
+
+</style>
+<apex:form >
+    <apex:pageBlock >
+        <apex:commandButton value="Save" action="{!save}"/>
+        <apex:pageBlockTable value="{!acc}" var="a" first="5" rows="5" width="10" captionStyle="color:red;background-color: lightblue;font-size: 20px;"  >
+        <apex:facet name="caption">Table Caption</apex:facet> 
+        <apex:inlineEditSupport />
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Phone}"/>
+            <apex:column value="{!a.Type}"/> 
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    <apex:pageBlock >
+        <apex:dataTable value="{!acc}" var="a" rows="5" cellpadding="10" border="2" captionClass="caption" headerClass="header" footerClass="footer" cellspacing="10"  bgcolor="yellow">
+            <apex:facet name="caption">Table Caption</apex:facet>
+            <apex:facet name="header">table header</apex:facet>
+            <apex:facet name="footer">table footer</apex:facet>           
+                <apex:column >
+                    <apex:facet name="header"> Name</apex:facet>
+                    <apex:facet name="footer">column footer</apex:facet>
+                    {!a.Name}
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header"> Phone</apex:facet>
+                    <apex:facet name="footer">column footer</apex:facet>
+                    {!a.Phone}
+                </apex:column>
+            <apex:column >
+                    <apex:facet name="header"> Type</apex:facet>
+                    <apex:facet name="footer">column footer</apex:facet>
+                    {!a.Type}
+                </apex:column> 
+        </apex:dataTable>
+    </apex:pageBlock>
+    <apex:pageBlock >
+        <apex:dataList value="{!acc}" var="a" rows="5"  >
+            {!a.Name}
+            {!a.Phone}
+            {!a.Type}"
+        </apex:dataList>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

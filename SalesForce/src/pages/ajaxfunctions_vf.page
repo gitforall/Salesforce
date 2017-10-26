@@ -1,0 +1,36 @@
+<apex:page controller="AjaxFunctions">
+        <script>
+            function apexex(){  
+                refreshexp1();
+                refreshexp2();
+            }
+        </script>
+        
+    <apex:form >  
+        <apex:actionFunction action="{!refresh}" name="refreshexp1" reRender="block1"/>
+        
+        <apex:pageBlock id="block1" title="Action Function" >
+            <input type="button" onclick="apexex()" value="click"/>
+            {!message}
+        </apex:pageBlock>
+        
+        <apex:pageBlock id="block2" title="Action Poller" >  
+            <apex:actionPoller action="{!datess}" interval="5" rerender="block2"/>
+             {! datet}
+        </apex:pageBlock>
+        
+        <apex:outputLabel > Click
+                  <apex:actionSupport action="{!getAccs}" event="onclick" reRender="dispalyaccounts" status="waiting"/>
+        </apex:outputLabel>
+                
+        <apex:actionStatus id="waiting" startText="Loading" stopText="Loading done .."> </apex:actionStatus>
+        
+        <apex:pageBlock id="dispalyaccounts" title="Action Status" >  
+              <apex:pageBlockTable value="{!accs}" var="ac">
+                  <apex:column value="{!ac.Name}"/>
+                               
+              </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

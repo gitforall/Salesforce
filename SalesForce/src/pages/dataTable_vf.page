@@ -1,0 +1,20 @@
+<apex:page controller="dataTableCon" id="thePage">
+<style>
+    .header{
+        text-align: center;
+        background-color: lightblue;
+    }
+</style>
+  <apex:pageBlock title="Account & Contact">
+      <apex:dataTable value="{!contacts}" var="acc" border="2" cellpadding="2" headerClass="header" >
+              <apex:column >
+                  <apex:facet name="header">Account Name </apex:facet>
+                  {!acc.account.Name}
+              </apex:column>
+              <apex:column >
+                  <apex:facet name="header">Contact Name </apex:facet>
+                  {!acc.Name}
+             </apex:column>
+      </apex:dataTable>
+  </apex:pageBlock>
+</apex:page>

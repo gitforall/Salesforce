@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Item Master</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Item_Masters</value>
+    </caseValues>
+    <fields>
+        <label><!-- Email_Formula --></label>
+        <name>Email_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inspection --></label>
+        <name>Inspection__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Cost --></label>
+        <name>Item_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Description --></label>
+        <name>Item_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Group --></label>
+        <name>Item_Group__c</name>
+        <picklistValues>
+            <masterLabel>Large Items</masterLabel>
+            <translation><!-- Large Items --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small Items</masterLabel>
+            <translation><!-- Small Items --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Received Date --></label>
+        <name>Received_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rollup --></label>
+        <name>Rollup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Items --></label>
+        <name>item__c</name>
+        <picklistValues>
+            <masterLabel>BOOK</masterLabel>
+            <translation><!-- BOOK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHARGER</masterLabel>
+            <translation><!-- CHARGER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DESKTOP</masterLabel>
+            <translation><!-- DESKTOP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LANDLINE</masterLabel>
+            <translation><!-- LANDLINE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LAPTOP</masterLabel>
+            <translation><!-- LAPTOP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MICRO ATM</masterLabel>
+            <translation><!-- MICRO ATM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MOBILE</masterLabel>
+            <translation><!-- MOBILE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PEN</masterLabel>
+            <translation><!-- PEN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TAB</masterLabel>
+            <translation><!-- TAB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TV</masterLabel>
+            <translation><!-- TV --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Item Child Pagelayout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Item Master Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Record type1 --></label>
+        <name>Record_type1</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Record type2 --></label>
+        <name>Record_type2</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Item Cost Should not be less than 100 --></errorMessage>
+        <name>ItemCost_Field_Should_Not_allow_alphabet</name>
+    </validationRules>
+</CustomObjectTranslation>

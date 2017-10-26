@@ -1,0 +1,23 @@
+<apex:page standardController="Account"  >
+
+
+        <apex:pageBlock title="Account">
+            <apex:tabPanel switchType="ajax" >
+               
+                <apex:tab label="Deatils"> 
+                   <apex:detail relatedList="false" />
+            
+                </apex:tab>  
+                
+                 <apex:tab label="Contacts">  
+                    <apex:relatedList list="Contacts"/>             
+                </apex:tab> 
+                
+                  <apex:tab label="Opportunities">  
+                    <apex:relatedList list="Opportunities"/>             
+                </apex:tab> 
+                        
+            </apex:tabPanel>
+        </apex:pageBlock>
+   
+</apex:page>

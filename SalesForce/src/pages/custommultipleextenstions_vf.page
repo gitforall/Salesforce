@@ -1,0 +1,6 @@
+<apex:Page controller="parentcontroller" extensions="custExtOne" >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>{!data}</h1>
+  This is your new Page: custommultipleextenstions_vf
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

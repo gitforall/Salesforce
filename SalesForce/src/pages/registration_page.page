@@ -1,0 +1,72 @@
+<apex:page sidebar="false" controller="registration_c">
+    <apex:form >
+    <apex:pageBlock title="Registration">
+     <style>
+            body .bPageBlock .pbBody .red .pbSubheader{
+                background-color:#c00000;
+            }
+            body .bPageBlock .pbBody .grey .pbSubheader{
+                background-color:#c0c0c0;
+            }
+            body .bPageBlock .pbBody .grey .pbSubheader h3{    
+                  color:#000;
+           }
+
+    </style>
+        <apex:outputPanel styleClass="red" layout="block">
+                <apex:pageBlockSection title="Deatils" >
+                            
+                    <apex:pageBlockSectionItem > 
+                                     <apex:outputLabel >First Name :</apex:outputLabel> <apex:inputText id="firstname" label="First Name" required="true" value="{!firstname}" /> 
+                    </apex:pageBlockSectionItem>  
+            
+                    <apex:pageBlockSectionItem > 
+                                      <apex:outputLabel >Last Name :</apex:outputLabel> <apex:inputText id="lastname" rendered="true" value="{!lastname}"/>
+                    </apex:pageBlockSectionItem>  
+            
+                    <apex:pageBlockSectionItem > 
+                                    <apex:outputLabel >Email :</apex:outputLabel>  <apex:inputText id="email" rendered="true" value="{!email}"/>
+                    </apex:pageBlockSectionItem>  
+                    
+                    <apex:pageBlockSectionItem > 
+                                    <apex:outputLabel >Phone :</apex:outputLabel>  <apex:inputText id="phone" rendered="true" value="{!phone}"/>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem > 
+                                    <apex:outputLabel >company :</apex:outputLabel>  <apex:inputText id="company" rendered="true" value="{!company}"/>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem > 
+                                    <apex:outputLabel >Location :</apex:outputLabel>  <apex:inputText id="location" rendered="true" value="{!location}"/>
+                    </apex:pageBlockSectionItem>
+                                     
+                    <apex:pageBlockSectionItem > 
+                        <apex:outputLabel >State :</apex:outputLabel>
+                            <apex:actionRegion >                   
+                                <apex:selectList size="1" value="{!state}">
+                                    <apex:selectOptions value="{!states}"/>
+                                    <apex:actionSupport event="onchange" reRender="a"/>
+                                </apex:selectList> 
+                              </apex:actionRegion>       
+                    </apex:pageBlockSectionItem>
+                                          
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel >City :</apex:outputLabel>
+                            <apex:actionRegion >  
+                                <apex:selectList size="1" value="{!city}" id="a">
+                                    <apex:selectOptions value="{!cities}"/>
+                                </apex:selectList>
+                            </apex:actionRegion> 
+                    </apex:pageblockSectionItem>                      
+                </apex:pageBlockSection>
+                
+        </apex:outputPanel>
+
+    <apex:pageBlockButtons >
+        <apex:commandButton id="save" action="{!dosave}" value="Save"/>
+        <apex:commandButton oncomplete="javascript:window.open('/{!$CurrentPage.parameters.opportunityId}', '_parent');"  value="Cancel"  immediate="true" />
+    </apex:pageBlockButtons>
+     
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>
